@@ -1,0 +1,38 @@
+ // Get image by Gravatar
+    $(document).on('change', 'input[name="email"]', function(e) {
+
+        var email = $(this).val();
+        var strHash = md5(email);
+        var imageSrc = 'https://www.gravatar.com/avatar/' + strHash + "?s=160";
+
+        $(".dropify-preview").css("display", "block")
+        $(".dropify-wrapper .dropify-clear").css("display", "block")
+
+        $(".dropify-render").html(`<img src='${imageSrc}' >`);
+
+        // $(".dropify-wrapper input").attr("value", imageSrc)
+        $(".dropify-wrapper input").removeAttr("required")
+        $("input[name='avatarURL'").attr("value", imageSrc)
+
+    });
+
+    $(document).on('click', '.dropify-clear', function(e) {
+
+        $(".dropify-wrapper .dropify-clear").css("display", "none")
+        $(".dropify-preview").css("display", "none")
+
+        // $(".dropify-wrapper input").removeAttr("value")
+        $(".dropify-wrapper input").attr("required")
+
+        $("input[name='avatarURL'").removeAttr("value")
+
+    });
+
+    $(document).on('click', '.dropify-wrapper input', function(e) {
+
+        $(".dropify-wrapper input").removeAttr("value")
+        $(".dropify-wrapper input").attr("required")
+
+        $(".dropify-preview").css("display", "none")
+
+    });
