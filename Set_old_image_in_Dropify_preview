@@ -1,0 +1,34 @@
+// === Set old image in Dropify preview ===
+  (function () {
+    let oldImage = $('.custom-dropify #oldImage').val();
+    let imageSrc = "/images/" + oldImage;
+
+    $(".custom-dropify .dropify-preview").css("display", "block")
+    $(".custom-dropify .dropify-wrapper .dropify-clear").css("display", "block")
+
+    $(".custom-dropify .dropify-render").html(`<img src='${imageSrc}' >`);
+
+    $(".custom-dropify .dropify-wrapper input").removeAttr("required")
+
+    $(document).on('click', '.custom-dropify .dropify-clear', function (e) {
+
+      $(".custom-dropify .dropify-wrapper .dropify-clear").css("display", "none")
+      $(".custom-dropify .dropify-preview").css("display", "none")
+
+      $(".custom-dropify .dropify-wrapper input").attr("required")
+
+      $(".custom-dropify #oldImage").removeAttr("value")
+
+    });
+
+    $(document).on('click', '.custom-dropify .dropify-wrapper input', function (e) {
+
+
+      $(".custom-dropify .dropify-wrapper input").attr("required")
+
+      $(".custom-dropify #oldImage").removeAttr("value")
+      $(".custom-dropify .dropify-preview").css("display", "none")
+
+    });
+
+  })();
