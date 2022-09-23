@@ -1,0 +1,4 @@
+ // Remove alert after 3sec of page load 
+  setTimeout(function () {
+    $(".dismiss-3").slideUp(800);
+  }, 3000);
