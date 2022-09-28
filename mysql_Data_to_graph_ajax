@@ -1,0 +1,18 @@
+$.ajax({
+    method: "get",
+    dataType: 'JSON',
+    url: "/getUserCount",
+  })
+    .done(function (data) {
+      var userCount = [];
+
+      data.forEach(function (entry) {
+        let values = Object.values(entry);
+        userCount.push(values[0]);
+        // console.log(values[0]);
+      });
+
+      console.log(userCount);
+    });
+
+// reference repo: mysql->count-of-users-in-a-month.txt
