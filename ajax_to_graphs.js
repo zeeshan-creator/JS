@@ -1,3 +1,14 @@
+// Controller --laravel
+// public function userCount()
+//     {
+//         $currentYear = date("Y");
+
+//         // this will return records from jan to dec of current year;
+//         $userCount = DB::select("SELECT count(id) AS 'Count'  from users WHERE(created_at) BETWEEN '" . $currentYear . "-01-01' AND '" . $currentYear . "-12-31' GROUP BY YEAR(created_at), MONTH(created_at)");
+
+//         return $userCount;
+//     }
+
 // Yearly User Count graph
   $.ajax({
     method: "get",
