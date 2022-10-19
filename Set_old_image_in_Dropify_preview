@@ -32,3 +32,11 @@
     });
 
   })();
+
+
+
+ <div class="custom-dropify">
+<input type="hidden" id="oldImage" name="oldImage" value="{{ $promotion->image }}">
+<input class="form-control dropify  @error('image')  is-invalid @enderror"
+type="file"name="image" id="image" placeholder="Image" />
+</div>
