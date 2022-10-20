@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="funccc()">Go to bottom</button>
+    <div class="container" style="height: 500px; overflow: scroll;" id="myElementID">
+
+    </div>
+
+    <script>
+        var div = document.getElementById('myElementID');
+        for (let i = 0; i < 100; i++) {
+            div.innerHTML += "Here is some more data appended <br>";
+        }
+
+
+        function funccc() {
+            //pure JS
+            var div = document.getElementById('myElementID');
+            div.scrollTop = div.scrollHeight - div.clientHeight;
+        }
+    </script>
+</body>
+
+</html>
